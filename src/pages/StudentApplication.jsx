@@ -16,6 +16,8 @@ export default function StudentApplication() {
   const [selectedInstitute, setSelectedInstitute] = useState("");
   const [selectedFaculty, setSelectedFaculty] = useState("");
   const [selectedCourse, setSelectedCourse] = useState("");
+  const BASE_URL = import.meta.env.VITE_API_URL || "https://career-guidance-plartform-1.onrender.com";
+
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -42,7 +44,8 @@ export default function StudentApplication() {
       try {
         setDataLoading(prev => ({ ...prev, institutes: true }));
         
-        const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/institutions`);
+        const response = await fetch(`${BASE_URL}'}/api/institutions`);
+        
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -97,7 +100,7 @@ export default function StudentApplication() {
       try {
         setDataLoading(prev => ({ ...prev, faculties: true }));
         
-        const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/faculties`);
+        const response = await fetch(`${BASE_URL}'}/api/faculties`);
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -157,7 +160,7 @@ export default function StudentApplication() {
       try {
         setDataLoading(prev => ({ ...prev, courses: true }));
         
-        const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/courses`);
+        const response = await fetch(`${BASE_URL}'}/api/courses`);
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -238,7 +241,7 @@ export default function StudentApplication() {
     };
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/student-applications`, {
+      const response = await fetch(`${BASE_URL}'}/api/student-applications`, {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',

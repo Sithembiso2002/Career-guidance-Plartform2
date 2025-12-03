@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const API = axios.create({
   baseURL: import.meta.env.VITE_API_URL || 'https://career-guidance-plartform-1.onrender.com'
+                                            
   
   //baseURL: import.meta.env.VITE_API_URL || 'https://career-plartform-backend.onrender.com'
 });

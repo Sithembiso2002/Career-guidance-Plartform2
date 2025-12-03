@@ -74,6 +74,7 @@ export default function ApplicationsManagement() {
     } finally {
       setLoading(false);
     }
+    
   };
 
   const calculateStats = (apps) => {
