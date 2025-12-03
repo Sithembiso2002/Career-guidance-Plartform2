@@ -57,7 +57,7 @@ export default function App() {
                 </li>
                 
                 {/* Admin links */}
-                * <li>
+                 <li>
                   <Link to="/admin/login">
                     <i className="fa fa-fw fa-wrench"></i>Admin
                   </Link>
