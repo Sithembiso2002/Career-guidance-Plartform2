@@ -86,7 +86,7 @@ const HomePage = () => {
 
         <div className="Content">
           <button className="Reg">
-            <a href="/login">Apply Now</a>
+            <a href="/user-login">Apply Now</a>
           </button>
         </div>
 
