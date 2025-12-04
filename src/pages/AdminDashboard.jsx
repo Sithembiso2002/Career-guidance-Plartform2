@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/css/ind.css';
 import '../assets/css/admin.css';
-import '../assets/css/adminhome.css';
+import '../assets/css/adminhome.css';ss
 import { Link } from "react-router-dom";
 import { 
   Users, 
