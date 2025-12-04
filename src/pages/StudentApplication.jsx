@@ -16,8 +16,6 @@ export default function StudentApplication() {
   const [selectedInstitute, setSelectedInstitute] = useState("");
   const [selectedFaculty, setSelectedFaculty] = useState("");
   const [selectedCourse, setSelectedCourse] = useState("");
-  const BASE_URL = import.meta.env.VITE_API_URL || "https://career-guidance-plartform-1.onrender.com";
-
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -44,8 +42,7 @@ export default function StudentApplication() {
       try {
         setDataLoading(prev => ({ ...prev, institutes: true }));
         
-        const response = await fetch(`${BASE_URL}'}/api/institutions`);
-        
+const response = await fetch(`${import.meta.env.VITE_API_URL || 'https://careerapp-2qc6.onrender.com'}/api/institutions`);
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -100,7 +97,7 @@ export default function StudentApplication() {
       try {
         setDataLoading(prev => ({ ...prev, faculties: true }));
         
-        const response = await fetch(`${BASE_URL}'}/api/faculties`);
+const response = await fetch(`${import.meta.env.VITE_API_URL || 'https://careerapp-2qc6.onrender.com'}/api/faculties`);
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -160,7 +157,7 @@ export default function StudentApplication() {
       try {
         setDataLoading(prev => ({ ...prev, courses: true }));
         
-        const response = await fetch(`${BASE_URL}'}/api/courses`);
+const response = await fetch(`${import.meta.env.VITE_API_URL || 'https://careerapp-2qc6.onrender.com'}/api/courses`);
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -241,7 +238,8 @@ export default function StudentApplication() {
     };
 
     try {
-      const response = await fetch(`${BASE_URL}'}/api/student-applications`, {
+const response = await fetch(`${import.meta.env.VITE_API_URL || 'https://careerapp-2qc6.onrender.com'}/api/student-applications`,
+        {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
